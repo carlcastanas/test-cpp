@@ -139,7 +139,7 @@ int main()
     cout << "3-Delete book" << endl;
     cout << "4-Search book" <<endl;
     cout << "5-Display all book" << endl;
-    cout << "6-Exit..." << endl;
+    cout << "6-Exit" << endl;
     cout << "-----------------------------" << endl;
 
 
@@ -181,5 +181,5 @@ int main()
   
     }while (option != 6);
     cout << "Exit............." << endl;
-    break;
+
 }
