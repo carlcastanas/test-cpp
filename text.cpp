@@ -108,7 +108,7 @@ int main()
     system( "CLS");
     break;
     case 2: 
-        cin.ignore();
+    cin.ignore();
     cout << "Searching for book" << endl;
     getline(cin, empID);
 
