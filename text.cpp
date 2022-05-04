@@ -111,14 +111,14 @@ void DeleteRecord(string search)
 
     for (int x = 0; x < maxrow; x++)
 {
-    if (EmpID[x] =- search)
+    if (EmpID[x] == search)
     {
                                         I
-         counter++;
-        EmpName [x]-"
-         EmpID[x]-
-         cout«"Successfully Deleted!"«endl;
-         break;
+        counter++;
+        EmpName [x] = " ";
+        EmpID[x] = " ";
+        cout << "Successfully Deleted!" << endl;
+        break;
 }
 if (counter ==
 {
