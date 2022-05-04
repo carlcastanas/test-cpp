@@ -113,20 +113,19 @@ void DeleteRecord(string search)
 {
     if (EmpID[x] == search)
     {
-                                        I
+
         counter++;
         EmpName [x] = " ";
         EmpID[x] = " ";
         cout << "Successfully Deleted!" << endl;
         break;
-}
-if (counter ==
+    }
+if (counter == 0)
 {
-    cout <« "ID Number does not exist!";
+    cout << "Book Number does not exist!";
 }
-                 0)
 }
-
+}
 int main()
 {
     std::cout << "MENU\n";
@@ -140,7 +139,7 @@ int main()
     cout << "3-Delete book" << endl;
     cout << "4-Search book" <<endl;
     cout << "5-Display all book" << endl;
-    cout << "6-Exit and Save to Textfile" << endl;
+    cout << "6-Exit..." << endl;
     cout << "-----------------------------" << endl;
 
 
