@@ -80,6 +80,8 @@ void SearchRecord(string search)
     }
      cout << "-----------------------------" << endl;
 }
+
+
 int main()
 {
     std::cout << "MENU\n";
@@ -105,7 +107,7 @@ int main()
     case 1: AddRecord();
     system( "CLS");
     break;
-    
+    case 2: 
     case 4:
     cin.ignore();
     cout << "Searching for book" << endl;
