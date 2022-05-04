@@ -99,7 +99,7 @@ for (int x = 0; x < maxrow; x++)
 
         EmpName [x] = name;
 
-        cout«"Update Successfull!"«endl;
+        cout << "Update Successfull!"«endl;
         break;
     }
 }
