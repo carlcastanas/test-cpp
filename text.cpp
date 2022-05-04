@@ -94,12 +94,12 @@ for (int x = 0; x < maxrow; x++)
     {
         counter++;
 
-        cout«"Book Name. ";
+        cout << "Book Name. ";
         cin.getline(name, 50);
 
         EmpName [x] = name;
 
-        cout << "Update Successfull!"«endl;
+        cout << "Update Successfull!" << endl;
         break;
     }
 }
