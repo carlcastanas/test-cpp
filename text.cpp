@@ -81,6 +81,26 @@ void SearchRecord(string search)
      cout << "-----------------------------" << endl;
 }
 
+void UpdateRecord(string search)
+{
+char name[50];
+char empno[5];
+
+int counter = 0;
+
+for (intx-0;x<maxrow; x++)
+{
+    if (EmpID[x] == search)
+    {
+        counter++;
+        cout«"Employee Name. ";
+        cin.getline(name, 50);
+        EmpName [x]=name;
+        cout«"Update Successfull!"«endl;
+        break;
+    }
+}
+}
 
 int main()
 {
