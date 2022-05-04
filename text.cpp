@@ -116,8 +116,8 @@ int main()
     cout << "1-Insert book in the library" << endl;
     cout << "2-Update book" <<endl;
     cout << "3-Delete book" << endl;
-    cout << "4-Search books" <<endl;
-    cout << "5-Display all books" << endl;
+    cout << "4-Search book" <<endl;
+    cout << "5-Display all book" << endl;
     cout << "6-Exit and Save to Textfile" << endl;
     cout << "-----------------------------" << endl;
 
