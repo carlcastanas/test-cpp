@@ -109,8 +109,11 @@ int main()
     break;
     case 2: 
         cin.ignore();
+    cout << "Searching for book" << endl;
+    getline(cin, empID);
+
     case 4:
-    cin.ignore();
+        cin.ignore();
     cout << "Searching for book" << endl;
     getline(cin, empID);
     SearchRecord(empID);
