@@ -140,7 +140,11 @@ int main()
     break;
     
     case 3:
-    
+    cin.ignore();
+    cout << "Searching for book" << endl;
+    getline(cin, empID);
+    UpdateRecord(empID);
+    break;
     case 4:
         cin.ignore();
     cout << "Searching for book" << endl;
