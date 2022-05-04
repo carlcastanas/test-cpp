@@ -61,10 +61,11 @@ void SearchRecord(string search)
    system("CLS");
    cout << "Current Record(s)" << endl;
    cout << "============================" << endl;
-
+   
+   int counter = 0;
    for (int x = 0; x < maxrow; x++)            
    {   
-      int counter = 0;
+
       if (EmpID[x] == search)
        {
       counter++;
@@ -72,11 +73,12 @@ void SearchRecord(string search)
       break;
        }
     }
-
+    
     if (counter == 0)
     {
-        cout << "No Record found!" << endl;
+    cout << "No Record found!" << endl;
     }
+     cout << "-----------------------------" << endl;
 }
 int main()
 {
@@ -105,6 +107,7 @@ int main()
     break;
     
     case 4:
+    cin.ignore();
     cout << "Searching for book" << endl;
     getline(cin, empID);
     SearchRecord(empID);
