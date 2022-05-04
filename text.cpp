@@ -94,7 +94,7 @@ for (int x = 0; x < maxrow; x++)
     {
         counter++;
 
-        cout << "Book Name. ";
+        cout << "Book Name: ";
         cin.getline(name, 50);
 
         EmpName [x] = name;
@@ -104,6 +104,7 @@ for (int x = 0; x < maxrow; x++)
     }
 }
 }
+
 
 int main()
 {
@@ -130,12 +131,16 @@ int main()
     case 1: AddRecord();
     system( "CLS");
     break;
+
     case 2: 
     cin.ignore();
     cout << "Searching for book" << endl;
     getline(cin, empID);
     UpdateRecord(empID);
     break;
+    
+    case 3:
+    
     case 4:
         cin.ignore();
     cout << "Searching for book" << endl;
