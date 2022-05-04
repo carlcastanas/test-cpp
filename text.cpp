@@ -137,13 +137,15 @@ int main()
     cout << "Searching for book" << endl;
     getline(cin, empID);
     UpdateRecord(empID);
+    system( "CLS");
     break;
     
     case 3:
     cin.ignore();
     cout << "Delete by No >> " << endl;
     getline(cin, empID);
-    UpdateRecord(empID);
+    DeleteRecord(empID);
+    system( "CLS");
     break;
     case 4:
         cin.ignore();
