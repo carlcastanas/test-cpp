@@ -97,8 +97,8 @@ for (int x = 0; x < maxrow; x++)
         cout«"Book Name. ";
         cin.getline(name, 50);
 
-        EmpName [x]=name;
-        
+        EmpName [x] = name;
+
         cout«"Update Successfull!"«endl;
         break;
     }
