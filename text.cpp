@@ -105,6 +105,26 @@ for (int x = 0; x < maxrow; x++)
 }
 }
 
+void DeleteRecord(string search)
+{
+    int counter = 0;
+for (intx-0;x<maxrow; x++)
+{
+    if (EmpID[x] =- search)
+    {
+                                        I
+         counter++;
+        EmpName [x]-"
+         EmpID[x]-
+         cout«"Successfully Deleted!"«endl;
+         break;
+}
+if (counter ==
+{
+    cout <« "ID Number does not exist!";
+}
+                 0)
+}
 
 int main()
 {
@@ -147,6 +167,7 @@ int main()
     DeleteRecord(empID);
     system( "CLS");
     break;
+
     case 4:
         cin.ignore();
     cout << "Searching for book" << endl;
