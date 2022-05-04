@@ -108,7 +108,8 @@ for (int x = 0; x < maxrow; x++)
 void DeleteRecord(string search)
 {
     int counter = 0;
-for (intx-0;x<maxrow; x++)
+
+    for (int x = 0; x < maxrow; x++)
 {
     if (EmpID[x] =- search)
     {
