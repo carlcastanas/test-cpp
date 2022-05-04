@@ -88,7 +88,7 @@ char empno[5];
 
 int counter = 0;
 
-for (int x = 0;x<maxrow; x++)
+for (int x = 0; x < maxrow; x++)
 {
     if (EmpID[x] == search)
     {
