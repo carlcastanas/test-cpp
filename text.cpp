@@ -180,5 +180,6 @@ int main()
     }
   
     }while (option != 6);
-
+    cout << "Exit............." << endl;
+    break;
 }
