@@ -123,7 +123,7 @@ int main()
     cout << "-----------------------------" << endl;
 
 
-    cout << "Select option >>";
+    cout << "Select option >> ";
     cin >> option;
 
     switch (option)
@@ -141,7 +141,7 @@ int main()
     
     case 3:
     cin.ignore();
-    cout << "Searching for book" << endl;
+    cout << "Delete by No >> " << endl;
     getline(cin, empID);
     UpdateRecord(empID);
     break;
