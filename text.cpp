@@ -108,6 +108,7 @@ int main()
     system( "CLS");
     break;
     case 2: 
+        cin.ignore();
     case 4:
     cin.ignore();
     cout << "Searching for book" << endl;
