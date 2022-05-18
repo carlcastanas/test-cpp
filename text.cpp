@@ -1,30 +1,35 @@
+//Francesca Carla
 #include <iostream>
 #include <string>
-#include<fstream>
 using namespace std;
 
-const int maxrow=10;
-
-string EmpName [maxrow]={};
-string EmpID[maxrow]={};
+const int maxrow=20;
+string b_title [maxrow]={};
+string b_author[maxrow]={};
+string b_isbn[maxrow]={};
+int counter;
 
 void AddRecord() {
-    char name[50];
-    char empno[5];
+    char title[50];
+    char author[20];
+    char isbn[4];
 
     cin.ignore();
 
-    cout << "Book ID: ";
-    cin.getline(empno, 5);
-    cout << "Book Name: ";
-   cin.getline(name, 50);
+    cout << "| Book Author: ";
+    cin.getline(author, 20);
+    cout << "| Book Name: ";
+    cin.getline(title, 50);
+    cout << "| Book Number: ";
+    cin.getline(isbn, 4);
 
  for (int x = 0; x < maxrow; x++)
  {
-    if(EmpID[x] == "\0")
+    if(b_author[x] == "\0")
     {
-        EmpID[x] = empno;
-        EmpName[x] = name;
+        b_author[x] = author;
+        b_title[x] = title;
+        b_isbn[x] = isbn;
         break;
     }
  }
@@ -32,154 +37,153 @@ void AddRecord() {
 
 void ListRecord()
 {
-system("CLS");
+ int counter = 0;
+ int x;
 cout << "Current Record(s)" <<endl;
-cout << "============================" << endl;
-int counter = 0;
-cout << " No. |    ID    |      Book NAME    " << endl << "============================\n";
-for (int x = 0; x < maxrow; x++)
-{
-    if (EmpID[x] != "\0")
-    {
-        
+cout << "|===================================================|" << endl;
+cout << " No. |      AUTHOR       |  TITLE  |      ISBN                    " << endl << "|===================================================|\n";
+    for (int x = 0; x < maxrow; x++)
+    if (b_author[x] != "\0") {
     counter++;
-    cout << " " << counter << "        " << EmpID[x] << "          " << EmpName[x] << endl;
-
+    cout << " " << counter << "           " << b_author[x] << "             " << b_title[x] << "           " << b_isbn[x] << endl;
+    cout <<"|===================================================|\n";
     }
-if (counter == 0)
+    else if (counter==0) {
+    cout << "| No Record found!" << endl;
+    cout <<"|===================================================|\n";
+    break;
+    }
+   
+}
+void bubbleSort(){
+      for (int x = 0; x < maxrow; x++)
     {
-        cout << "No Record found!" << endl;
+    if (b_title[x] != "\0")  
+    counter++;  
     }
+            for(int i=0;i<counter;i++)
+            {
+                for( int j=i+1; j<counter; j++)
+                {
+                    if(b_title[j] < b_title[i])
+                    {
+                       string temp;
+                        temp = b_title[i];
+                        b_title[i] = b_title[j];
+                        b_title[j] = temp;
 
-    cout << "============================" << endl;
-
-}
-}
-
+                    }
+                }
+            }
+                 for( int i=0; i<counter; i++){
+                cout << "|"<<"   "<<b_title[i]<<"     "<<endl;
+                cout <<"|===================================================|\n";
+                    }
+                }
+         
 void SearchRecord(string search)
 {
-   system("CLS");
+   
    cout << "Current Record(s)" << endl;
-   cout << "============================" << endl;
+   cout << "|===================================================|" << endl;
    
    int counter = 0;
    for (int x = 0; x < maxrow; x++)            
    {   
 
-      if (EmpID[x] == search)
+      if (b_title[x] == search)
        {
       counter++;
-      cout << " " << counter << "        " << EmpID[x] << "          " << EmpName[x] << endl;
+      cout << "| " << counter << "        " << b_author[x] << "          " << b_title[x] << endl;
       break;
        }
     }
     
     if (counter == 0)
     {
-    cout << "No Record found!" << endl;
+    cout << "  No Record found!" << endl;
     }
-     cout << "-----------------------------" << endl;
+     cout << "|===================================================|" << endl;
 }
-
-void UpdateRecord(string search)
+void DeleteRecord(string borrow)
 {
-char name[50];
-char empno[5];
-
-int counter = 0;
-
-for (int x = 0; x < maxrow; x++)
-{
-    if (EmpID[x] == search)
-    {
-        counter++;
-
-        cout << "Book Name: ";
-        cin.getline(name, 50);
-
-        EmpName [x] = name;
-
-        cout << "Update Successfull!" << endl;
-        break;
-    }
-}
-}
-
-void DeleteRecord(string search)
-{
+    int x, j;
+    int size = 20;
     int counter = 0;
 
-    for (int x = 0; x < maxrow; x++)
+    for (int x = 0; x < size; x++)
 {
-    if (EmpID[x] == search)
+    if (b_title[x] == borrow)
     {
-
+        for(j=x; j<(size-1); j++){
+        b_title[j] = b_title[j+1];
+         b_author[j] = b_author[j+1];
+        }
         counter++;
-        EmpName [x] = " ";
-        EmpID[x] = " ";
-        cout << "Successfully Deleted!" << endl;
         break;
     }
+}
 if (counter == 0)
-{
-    cout << "Book Number does not exist!";
+{ 
+    cout << "|===================================================|" << endl;
+    cout << "| Book title does not exist!"<<endl;
+    cout << "|===================================================|" << endl;
 }
-}
-}
+else
+
+        cout << "|===================================================|" << endl;
+        cout << "| Successfully Borrowed!" << endl;
+        cout << "|===================================================|" << endl;
+
+    }
 int main()
 {
-    std::cout << "MENU\n";
+    cout << "MENU\n";
     int option;
-    string empID;
-    system("CLS");
-
+    string b_title;
+    string borrow;
+    char author[20];
     do{
-    cout << "1-Insert book in the library" << endl;
-    cout << "2-Update book" <<endl;
-    cout << "3-Delete book" << endl;
-    cout << "4-Search book" <<endl;
-    cout << "5-Display all book" << endl;
-    cout << "6-Exit" << endl;
-    cout << "-----------------------------" << endl;
-
-
-    cout << "Select option >> ";
+    cout << "| 1-Insert book in the library" << endl;
+    cout << "| 2-Display all book" << endl;
+    cout << "| 3-Sorted list of Books " <<endl;
+    cout << "| 4-Search book" << endl;
+    cout << "| 5-Borrow book" <<endl;
+    cout << "| 6-Exit" << endl;
+    cout << "|===================================================" << endl;
+    cout << "| Select option >> ";
     cin >> option;
 
     switch (option)
     {
     case 1: AddRecord();
-    system( "CLS");
     break;
 
-    case 2: 
-    cin.ignore();
-    cout << "Searching for book" << endl;
-    getline(cin, empID);
-    UpdateRecord(empID);
-    system( "CLS");
+    case 2: ListRecord();
+   
     break;
     
     case 3:
-    cin.ignore();
-    cout << "Delete by No >> " << endl;
-    getline(cin, empID);
-    DeleteRecord(empID);
-    system( "CLS");
+    cout << "| Sorted List of Books: " << endl;
+    bubbleSort();
     break;
 
-    case 4:
-        cin.ignore();
-    cout << "Searching for book" << endl;
-    getline(cin, empID);
-    SearchRecord(empID);
+    case 4:cin.ignore();
+    cout << "| Searching for book using title" << endl;
+    getline(cin, b_title);
+    SearchRecord(b_title);
     break;
-
-    case 5: ListRecord();
+    
+    case 5: cin.ignore();
+    cout << "| Borrow by title >> " << endl;
+    getline(cin, borrow);
+    DeleteRecord(borrow);
     break;
+    
+    default:
+    cout << "| Exit............." << endl;
+    return 0;
     }
   
-    }while (option != 6);
-    cout << "Exit............." << endl;
-
+    }while (option<6);
 }
