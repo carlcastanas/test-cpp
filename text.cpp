@@ -1,18 +1,17 @@
-//Francesca Carla
 #include <iostream>
 #include <string>
 using namespace std;
 
-const int maxrow=20;
+const int maxrow=100;
 string b_title [maxrow]={};
 string b_author[maxrow]={};
-string b_isbn[maxrow]={};
+int64_t b_isbn[maxrow]={13};
 int counter;
 
 void AddRecord() {
     char title[50];
     char author[20];
-    char isbn[4];
+    int64_t isbn;
 
     cin.ignore();
 
@@ -20,8 +19,8 @@ void AddRecord() {
     cin.getline(author, 20);
     cout << "| Book Name: ";
     cin.getline(title, 50);
-    cout << "| Book Number: ";
-    cin.getline(isbn, 4);
+    cout << "| ISBN: ";
+    cin >>isbn;
 
  for (int x = 0; x < maxrow; x++)
  {
@@ -40,17 +39,17 @@ void ListRecord()
  int counter = 0;
  int x;
 cout << "Current Record(s)" <<endl;
-cout << "|===================================================|" << endl;
-cout << " No. |      AUTHOR       |  TITLE  |      ISBN                    " << endl << "|===================================================|\n";
+    cout << "|===================================================================|" << endl;
+    cout << "  No. |       AUTHOR         |        TITLE            |    ISBN    " << endl << "|===================================================================|\n";
     for (int x = 0; x < maxrow; x++)
     if (b_author[x] != "\0") {
     counter++;
-    cout << " " << counter << "           " << b_author[x] << "             " << b_title[x] << "           " << b_isbn[x] << endl;
-    cout <<"|===================================================|\n";
+    cout << " " << counter << "       " << b_author[x] << "              " << b_title[x] << "              " << b_isbn[x] << endl;
+    cout <<"|===================================================================|\n";
     }
     else if (counter==0) {
     cout << "| No Record found!" << endl;
-    cout <<"|===================================================|\n";
+    cout <<"|===================================================================|\n";
     break;
     }
    
@@ -77,7 +76,7 @@ void bubbleSort(){
             }
                  for( int i=0; i<counter; i++){
                 cout << "|"<<"   "<<b_title[i]<<"     "<<endl;
-                cout <<"|===================================================|\n";
+                cout <<"|===================================================================|\n";
                     }
                 }
          
@@ -85,7 +84,8 @@ void SearchRecord(string search)
 {
    
    cout << "Current Record(s)" << endl;
-   cout << "|===================================================|" << endl;
+   cout << "|===================================================================|" << endl;
+    cout << "  No. |     AUTHOR       |      TITLE     |      ISBN     " << endl << "|===================================================================|\n";
    
    int counter = 0;
    for (int x = 0; x < maxrow; x++)            
@@ -94,7 +94,7 @@ void SearchRecord(string search)
       if (b_title[x] == search)
        {
       counter++;
-      cout << "| " << counter << "        " << b_author[x] << "          " << b_title[x] << endl;
+         cout << "  " << counter << "         " << b_author[x] << "              " << b_title[x] << "       " << b_isbn[x] << endl;
       break;
        }
     }
@@ -103,7 +103,7 @@ void SearchRecord(string search)
     {
     cout << "  No Record found!" << endl;
     }
-     cout << "|===================================================|" << endl;
+     cout << "|=======================================================|" << endl;
 }
 void DeleteRecord(string borrow)
 {
@@ -125,20 +125,22 @@ void DeleteRecord(string borrow)
 }
 if (counter == 0)
 { 
-    cout << "|===================================================|" << endl;
+    cout << "|===================================================================|" << endl;
     cout << "| Book title does not exist!"<<endl;
-    cout << "|===================================================|" << endl;
+    cout << "|===================================================================|" << endl;
 }
 else
 
-        cout << "|===================================================|" << endl;
+        cout << "|===================================================================|" << endl;
         cout << "| Successfully Borrowed!" << endl;
-        cout << "|===================================================|" << endl;
+        cout << "|===================================================================|" << endl;
 
     }
 int main()
 {
-    cout << "MENU\n";
+    cout << "|===================================================================|" << endl;
+    cout << "  MENU\n";
+    cout << "|===================================================================|" << endl;
     int option;
     string b_title;
     string borrow;
@@ -150,7 +152,7 @@ int main()
     cout << "| 4-Search book" << endl;
     cout << "| 5-Borrow book" <<endl;
     cout << "| 6-Exit" << endl;
-    cout << "|===================================================" << endl;
+    cout << "|===================================================================|" << endl;
     cout << "| Select option >> ";
     cin >> option;
 
